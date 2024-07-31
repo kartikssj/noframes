@@ -1,3 +1,4 @@
+
 export async function getBadge (tabId?: number): Promise<number> {
     return chrome.action.getBadgeText({tabId}).then((text) => {
         const count = parseInt(text);

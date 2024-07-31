@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Root.css";
-import { getConfig, updateConfig } from "../config";
-import { getBadge } from "../badge";
+import { getConfig, updateConfig } from "../services/config";
+import { getBadge } from "../services/badge";
 
 export const Root: React.FC = () => {
   const [list, setList] = useState<string[]>([]);

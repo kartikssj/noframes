@@ -1,5 +1,5 @@
-import {Config, getConfig} from "./config";
-import {log} from "./log";
+import {Config, getConfig} from "./services/config";
+import {log} from "./services/log";
   
 declare global {
     interface Document {
@@ -56,6 +56,5 @@ function removeIframe(iframe: HTMLIFrameElement, config: Config) {
   });
 }
   
-log("Content script loaded");
 run();
   

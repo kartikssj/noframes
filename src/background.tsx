@@ -1,7 +1,4 @@
-import {setBadge} from "./badge";
-import {log} from "./log";
-
-log("Background script loaded");
+import {setBadge} from "./services/badge";
 
 chrome.runtime.onMessage.addListener((message, sender) => {
   const {cmd, data} = message;
