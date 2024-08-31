@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
@@ -37,11 +36,7 @@ const plugins = [
       { from: "src/images", to: "images" },
       { from: "src/manifest.json", to: "manifest.json" },
     ],
-  }),
-  new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, "./src/action/action.html"),
-    filename: "action.html",
-  }),
+  })
 ];
 
 const devServer = {
@@ -54,12 +49,6 @@ const devServer = {
       runtimeErrors: true,
     },
   },
-};
-
-const entry = {
-  action: "src/action.tsx",
-  content: "src/content.tsx",
-  background: "src/background.tsx",
 };
 
 const output = {
@@ -79,15 +68,11 @@ const common = {
 module.exports = [
   {
     ...common,
-    entry: {action: "./src/action/action.tsx"},
-    plugins,
+    entry: {background: "./src/background.ts"},
+    plugins
   },
   {
     ...common,
-    entry: {content: "./src/content.tsx"},
-  },
-  {
-    ...common,
-    entry: {background: "./src/background.tsx"},
-  },
+    entry: {content: "./src/content.ts"},
+  }
 ];
